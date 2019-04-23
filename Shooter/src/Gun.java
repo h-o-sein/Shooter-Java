@@ -1,3 +1,5 @@
+import java.awt.*;
+
 public class Gun {
 
     private int x;
@@ -12,6 +14,14 @@ public class Gun {
         this.Height = Height;
         this.Width = Width;
 
+    }
+
+    public void Drawing(Graphics ui) {
+        ui.setColor(Color.darkGray);
+        ui.fill3DRect((x/2) - (Width/2), y - Height, Width, Height,true);
+
+        ui.setColor(Color.GREEN);
+        //ui.drawLine();
     }
 
 }
