@@ -29,4 +29,12 @@ public class Gun {
 
     }
 
+    public void MoveLeftGun() {
+
+    }
+
+    public void MoveRightGun() {
+
+    }
+
 }
