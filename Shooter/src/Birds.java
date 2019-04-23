@@ -6,6 +6,7 @@ public class Birds {
     private int x;
     private int y;
 
+
     private int xSpeed;
     private int ySpeed;
 
@@ -14,7 +15,7 @@ public class Birds {
     private int height;
 
 
-    public void Ball(int x, int y, int width,int height, Color color) {
+    public Birds(int x, int y, int width,int height, Color color) {
         this.x = x;
         this.y = y;
         this.width = width;
@@ -29,9 +30,14 @@ public class Birds {
     public void draw(Graphics g){
         g.setColor(color);
         g.fillOval(x , y , width , height);
+        g.setColor(Color.BLACK);
+        g.fillOval(x+70 , y+20 , 10 , 10);
+        g.drawLine(x+20 , y+20 , x+40 , y+30);
+        g.drawLine(x+20 , y+30 , x+40 , y+20);
+
     }
 
-    public void move(int gameWidth, int gameHeight){
+    /*         public void move(int gameWidth, int gameHeight){
         x += xSpeed;
         y += ySpeed;
 
@@ -46,5 +52,5 @@ public class Birds {
 
         if(y < 0)
             ySpeed *= -1;
-    }
+    } */
 }
