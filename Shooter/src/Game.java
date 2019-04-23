@@ -13,7 +13,7 @@ public class Game extends JPanel {
         setFocusable(true);
         setFocusTraversalKeysEnabled(true);
 
-        gun = new Gun(WIDTH, HEIGHT,20,100);
+        gun = new Gun(WIDTH, HEIGHT,25,100);
 
     }
 
