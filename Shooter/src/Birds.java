@@ -1,11 +1,9 @@
-import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.*;
 
 public class Birds {
 
     private int x;
     private int y;
-
 
     private int xSpeed;
     private int ySpeed;
@@ -22,22 +20,22 @@ public class Birds {
         this.height = height;
         this.color = color;
 
-        xSpeed = 1;
-        ySpeed = 1;
+        xSpeed = 10;
+        ySpeed = 10;
     }
 
 
-    public void draw(Graphics g){
-        g.setColor(color);
-        g.fillOval(x , y , width , height);
-        g.setColor(Color.BLACK);
-        g.fillOval(x+70 , y+20 , 10 , 10);
-        g.drawLine(x+20 , y+20 , x+40 , y+30);
-        g.drawLine(x+20 , y+30 , x+40 , y+20);
+    public void draw(Graphics UiBirds){
+        UiBirds.setColor(color);
+        UiBirds.fillOval(x , y , width , height);
+        UiBirds.setColor(Color.BLACK);
+        UiBirds.fillOval(x+70 , y+20 , 10 , 10);
+        UiBirds.drawLine(x+20 , y+20 , x+40 , y+30);
+        UiBirds.drawLine(x+20 , y+30 , x+40 , y+20);
 
     }
 
-    /*         public void move(int gameWidth, int gameHeight){
+    public void moveBirds(int gameWidth, int gameHeight){
         x += xSpeed;
         y += ySpeed;
 
@@ -52,5 +50,5 @@ public class Birds {
 
         if(y < 0)
             ySpeed *= -1;
-    } */
+    }
 }

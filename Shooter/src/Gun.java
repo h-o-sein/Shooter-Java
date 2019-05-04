@@ -9,6 +9,7 @@ public class Gun {
 
     public Gun(int x,int y,int Width, int Height) {
 
+        super();
         this.x = x;
         this.y = y;
         this.Height = Height;
