@@ -20,8 +20,8 @@ public class Birds {
         this.height = height;
         this.color = color;
 
-        xSpeed = 10;
-        ySpeed = 10;
+        xSpeed = 2;
+        ySpeed = 2;
     }
 
 
@@ -35,14 +35,14 @@ public class Birds {
 
     }
 
-    public void moveBirds(int gameWidth, int gameHeight){
+    public void moveBirds(int gameWidth, int gameHeight, int GunHeight){
         x += xSpeed;
         y += ySpeed;
 
         if(x + width > gameWidth)
             xSpeed *= -1;
 
-        if(y + height > gameHeight)
+        if(y + height > gameHeight - GunHeight - 50)
             ySpeed *= -1;
 
         if(x < 0)

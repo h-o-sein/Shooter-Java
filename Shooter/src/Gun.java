@@ -7,6 +7,8 @@ public class Gun {
     private int Width;
     private int Height;
 
+    private int xSpeed;
+
     public Gun(int x,int y,int Width, int Height) {
 
         super();
@@ -14,6 +16,7 @@ public class Gun {
         this.y = y;
         this.Height = Height;
         this.Width = Width;
+        this.xSpeed = 5;
 
     }
 
@@ -32,9 +35,22 @@ public class Gun {
 
     public void MoveLeftGun() {
 
+        if (x <= 0)
+            x = 0;
+        else {
+            xSpeed = -10;
+            x += xSpeed;
+        }
+
     }
 
-    public void MoveRightGun() {
+    public void MoveRightGun(int gameWidth) {
+
+        if (x + Width < gameWidth) {
+            xSpeed = 10;
+            x += xSpeed;
+        } else
+            x = gameWidth - Width;
 
     }
 

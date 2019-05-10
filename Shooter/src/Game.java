@@ -16,15 +16,22 @@ public class Game extends JPanel implements ActionListener, KeyListener {
     private ArrayList<Birds> birds;
     private Timer timer;
     private Gun gun;
+    private int GunHeight = 100;
 
     public Game() {
         timer = new Timer(20,this);
-        gun = new Gun(WIDTH, HEIGHT,25,100);
+        gun = new Gun(WIDTH, HEIGHT,25,GunHeight);
+
+        timer.start();
+
+        this.addKeyListener(this);
+        setFocusable(true);
+        setFocusTraversalKeysEnabled(true);
 
         birds = new ArrayList<Birds>();
-        birds.add(new Birds(10,10,90,70,Color.orange));
-        birds.add(new Birds(10,10,90,70,Color.green));
-        birds.add(new Birds(10,10,90,70,Color.yellow));
+        birds.add(new Birds(260,85,90,70,Color.orange));
+        birds.add(new Birds(100,50,90,70,Color.green));
+        birds.add(new Birds(50,200,90,70,Color.yellow));
     }
 
     @Override
@@ -41,7 +48,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         for (Birds bird:birds)
-            bird.moveBirds(WIDTH,HEIGHT);
+            bird.moveBirds(WIDTH,HEIGHT,GunHeight);
         repaint();
     }
 
@@ -52,6 +59,12 @@ public class Game extends JPanel implements ActionListener, KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
+
+        if (e.getKeyCode() == KeyEvent.VK_LEFT)
+            gun.MoveLeftGun();
+
+        if (e.getKeyCode() == KeyEvent.VK_RIGHT)
+            gun.MoveRightGun(WIDTH);
 
     }
 
