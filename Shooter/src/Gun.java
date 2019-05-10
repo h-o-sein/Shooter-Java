@@ -8,6 +8,7 @@ public class Gun {
     private int Height;
 
     private int xSpeed;
+    private int ySpeed;
 
     public Gun(int x,int y,int Width, int Height) {
 
@@ -17,6 +18,7 @@ public class Gun {
         this.Height = Height;
         this.Width = Width;
         this.xSpeed = 5;
+        this.ySpeed = 5;
 
     }
 
@@ -31,14 +33,17 @@ public class Gun {
         ui.drawLine( x/2,(y + 7) - (4 * Height), x/2, (y + 7) - (4 * Height) + 11);
         ui.drawLine( x/2,(y - 7) - (4 * Height), x/2, (y - 7) - (4 * Height) - 11);
 
+        ui.setColor(Color.ORANGE);
+        ui.fillOval((x/2) - (Width/2), y - Height, 24, 24);
+
     }
 
     public void MoveLeftGun() {
 
-        if (x <= 0)
-            x = 0;
+        if (x <= Width)
+            x = Width;
         else {
-            xSpeed = -10;
+            xSpeed = -15;
             x += xSpeed;
         }
 
@@ -46,12 +51,21 @@ public class Gun {
 
     public void MoveRightGun(int gameWidth) {
 
-        if (x + Width < gameWidth) {
-            xSpeed = 10;
+        if (x + Width < 2*gameWidth) {
+            xSpeed = 15;
             x += xSpeed;
         } else
-            x = gameWidth - Width;
+            x = 2*gameWidth - Width;
 
+    }
+
+    public void FireGun(int gameHeight) {
+        if (y < gameHeight) {
+            ySpeed = 30;
+            y += ySpeed;
+        }
+        else
+            y = gameHeight - 24;
     }
 
 }

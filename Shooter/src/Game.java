@@ -66,6 +66,9 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         if (e.getKeyCode() == KeyEvent.VK_RIGHT)
             gun.MoveRightGun(WIDTH);
 
+        if (e.getKeyCode() == KeyEvent.VK_SPACE)
+            gun.FireGun(HEIGHT);
+
     }
 
     @Override
