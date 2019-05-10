@@ -17,6 +17,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
     private Timer timer;
     private Gun gun;
     private int GunHeight = 100;
+    public boolean Fire = false;
 
     public Game() {
         timer = new Timer(20,this);
@@ -49,6 +50,10 @@ public class Game extends JPanel implements ActionListener, KeyListener {
     public void actionPerformed(ActionEvent e) {
         for (Birds bird:birds)
             bird.moveBirds(WIDTH,HEIGHT,GunHeight);
+
+        if (Fire == true)
+            gun.FireGun(HEIGHT);
+
         repaint();
     }
 
@@ -66,8 +71,11 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         if (e.getKeyCode() == KeyEvent.VK_RIGHT)
             gun.MoveRightGun(WIDTH);
 
-        if (e.getKeyCode() == KeyEvent.VK_SPACE)
-            gun.FireGun(HEIGHT);
+        if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+            Fire = true;
+        }
+
+
 
     }
 
