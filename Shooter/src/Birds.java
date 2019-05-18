@@ -48,7 +48,13 @@ public class Birds {
         if(x < 0)
             xSpeed *= -1;
 
-        if(y < 0)
+        if(y < 50)
             ySpeed *= -1;
     }
+
+    public Rectangle getBound() {
+        Rectangle BirdRect = new Rectangle(x, y, width, height);
+        return BirdRect;
+    }
+
 }

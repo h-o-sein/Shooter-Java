@@ -1,5 +1,4 @@
-import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -36,14 +35,20 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         birds.add(new Birds(260,85,90,70,Color.orange));
         birds.add(new Birds(100,50,90,70,Color.green));
         birds.add(new Birds(50,200,90,70,Color.yellow));
+
     }
 
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        for (Birds bird:birds)
+        for (Birds bird:birds) {
             bird.draw(g);
+            if (bird.getBound().intersects(gun.getBound())){
+                birds.remove(bird);
+            }
+        }
+
 
         gun.Drawing(g);
         statusBar.draw(g);

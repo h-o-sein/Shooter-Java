@@ -29,7 +29,7 @@ public class StatusBar {
         UIStatusBar.fillRect(x, y, width, height);
         int Fire = 10 - FireCount;
         UIStatusBar.setColor(Color.RED);
-        UIStatusBar.drawString("Shots: " + String.valueOf(Fire), (width)/2 - 25, height/2);
+        UIStatusBar.drawString("Shots: " + String.valueOf(Fire), (width)/2 - 30, height/2);
 
     }
 
