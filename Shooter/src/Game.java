@@ -16,8 +16,9 @@ public class Game extends JPanel implements ActionListener, KeyListener {
     private ArrayList<Birds> birds;
     private Timer timer;
     private Gun gun;
+    private StatusBar statusBar;
     private int GunHeight = 100;
-    public boolean Fire = false;
+    private int ShotCounter = 0;
 
     public Game() {
         timer = new Timer(20,this);
@@ -28,6 +29,8 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         this.addKeyListener(this);
         setFocusable(true);
         setFocusTraversalKeysEnabled(true);
+
+        statusBar = new StatusBar(0,0, WIDTH, 50, Color.lightGray);
 
         birds = new ArrayList<Birds>();
         birds.add(new Birds(260,85,90,70,Color.orange));
@@ -43,6 +46,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
             bird.draw(g);
 
         gun.Drawing(g);
+        statusBar.draw(g);
 
     }
 
@@ -51,7 +55,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         for (Birds bird:birds)
             bird.moveBirds(WIDTH,HEIGHT,GunHeight);
 
-        if (Fire == true)
+        if (gun.Fire == true)
             gun.FireGun(HEIGHT);
 
         repaint();
@@ -72,9 +76,13 @@ public class Game extends JPanel implements ActionListener, KeyListener {
             gun.MoveRightGun(WIDTH);
 
         if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-            Fire = true;
-        }
 
+            if (ShotCounter < 10) {
+                gun.Fire = true;
+                statusBar.StatusFire();
+                ShotCounter++;
+            }
+        }
 
 
     }

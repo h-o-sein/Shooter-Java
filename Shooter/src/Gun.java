@@ -11,8 +11,7 @@ public class Gun {
     private int ySpeed;
 
     private int yFire;
-    private boolean Fire = false;
-    private Game game;
+    public boolean Fire = false;
 
     public Gun(int x,int y,int Width, int Height) {
 
@@ -72,7 +71,13 @@ public class Gun {
         }
         else {
             yFire = gameHeight - 24;
+            Fire = false;
         }
+    }
+
+    public Rectangle getBound() {
+        Rectangle ShotRect = new Rectangle((x/2) - (Width/2), yFire, 24, 24);
+        return ShotRect;
     }
 
 }
