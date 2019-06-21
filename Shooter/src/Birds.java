@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.awt.*;
 
 public class Birds {
@@ -26,13 +27,15 @@ public class Birds {
 
 
     public void draw(Graphics UiBirds){
-        UiBirds.setColor(color);
+        /*UiBirds.setColor(color);
         UiBirds.fillOval(x , y , width , height);
         UiBirds.setColor(Color.BLACK);
         UiBirds.fillOval(x+70 , y+20 , 10 , 10);
         UiBirds.drawLine(x+20 , y+20 , x+40 , y+30);
-        UiBirds.drawLine(x+20 , y+30 , x+40 , y+20);
-
+        UiBirds.drawLine(x+20 , y+30 , x+40 , y+20);*/
+        ImageIcon BirdIcon = new ImageIcon(getClass().getClassLoader().getResource("images/bird.gif"));
+        Image BirdImage = BirdIcon.getImage();
+        UiBirds.drawImage(BirdImage, x, y, width, height, null);
     }
 
     public void moveBirds(int gameWidth, int gameHeight, int GunHeight){
