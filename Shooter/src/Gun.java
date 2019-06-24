@@ -29,8 +29,11 @@ public class Gun {
 
     public void Drawing(Graphics ui) {
 
-        ui.setColor(Color.ORANGE);
-        ui.fillOval((x/2) - (Width/2), yFire, 24, 24);
+        /*ui.setColor(Color.ORANGE);
+        ui.fillOval((x/2) - (Width/2), yFire, 24, 24);*/
+        ImageIcon FireIcon = new ImageIcon(getClass().getClassLoader().getResource("images/fire.png"));
+        Image FireImage = FireIcon.getImage();
+        ui.drawImage(FireImage, (x/2) - (Width/2), yFire, 20, 35, null);
 
         /*ui.setColor(Color.darkGray);
         ui.fill3DRect((x/2) - (Width/2), y - Height, Width, Height,true);*/
