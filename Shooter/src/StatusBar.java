@@ -41,7 +41,7 @@ public class StatusBar {
         UIStatusBar.setColor(Color.yellow);
         UIStatusBar.setFont(new Font (Font.SANS_SERIF , Font.BOLD , 20));
         UIStatusBar.drawString("Shots: " + String.valueOf(Fire), 20 , game.HEIGHT + 30 ) ;
-        UIStatusBar.drawString("Level: " , 220 , game.HEIGHT + 30 ) ;
+        UIStatusBar.drawString("Level: " + String.valueOf(Level), 220 , game.HEIGHT + 30 ) ;
        UIStatusBar.drawString("Scores: " + String.valueOf(Scores), 20 , game.HEIGHT + 80 ) ;
 
        UIStatusBar.drawString("Name: " + Name, 20 , game.HEIGHT + 130 ) ;
