@@ -49,37 +49,42 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         birds.add(new Birds(50,200,90,70,Color.yellow));
         birds.add(new Birds(260,300,90,70,Color.BLUE));*/
         //ok
+        do {
 
-        if (Scores >= 0) {
-            birds.add(new Birds(260,85,90,70,Color.orange));
-        }
-        else if (Scores >= 25) {
-            Level++;
-            birds.add(new Birds(100,50,90,70,Color.green));
-            birds.add(new Birds(50,200,90,70,Color.yellow));
-            birds.add(new Birds(260,300,90,70,Color.BLUE));
-        }
-        else if (Scores >= 75) {
-            Level++;
-            birds.add(new Birds(260,85,90,70,Color.orange));
-            birds.add(new Birds(100,50,90,70,Color.green));
-            birds.add(new Birds(50,200,90,70,Color.yellow));
-            birds.add(new Birds(260,300,90,70,Color.BLUE));
-            birds.add(new Birds(85,260,90,70,Color.BLUE));
-        }
-        else if (Scores >= 125) {
-            Level++;
-            birds.add(new Birds(260,85,90,70,Color.orange));
-            birds.add(new Birds(100,50,90,70,Color.green));
-            birds.add(new Birds(50,200,90,70,Color.yellow));
-            birds.add(new Birds(260,300,90,70,Color.BLUE));
-            birds.add(new Birds(85,260,90,70,Color.BLUE));
-            birds.add(new Birds(50,100,90,70,Color.green));
-            birds.add(new Birds(150,10,90,70,Color.yellow));
-        }
-        else if (Scores >= 175) {
+            if (Scores >= 0) {
+                birds.add(new Birds(260,85,90,70,Color.orange));
+            }
+            else if (Scores >= 25) {
+                Level++;
+                birds.add(new Birds(100,50,90,70,Color.green));
+                birds.add(new Birds(50,200,90,70,Color.yellow));
+                birds.add(new Birds(260,300,90,70,Color.BLUE));
+            }
+            else if (Scores >= 75) {
+                Level++;
+                birds.add(new Birds(260,85,90,70,Color.orange));
+                birds.add(new Birds(100,50,90,70,Color.green));
+                birds.add(new Birds(50,200,90,70,Color.yellow));
+                birds.add(new Birds(260,300,90,70,Color.BLUE));
+                birds.add(new Birds(85,260,90,70,Color.BLUE));
+            }
+            else if (Scores >= 125) {
+                Level++;
+                birds.add(new Birds(260,85,90,70,Color.orange));
+                birds.add(new Birds(100,50,90,70,Color.green));
+                birds.add(new Birds(50,200,90,70,Color.yellow));
+                birds.add(new Birds(260,300,90,70,Color.BLUE));
+                birds.add(new Birds(85,260,90,70,Color.BLUE));
+                birds.add(new Birds(50,100,90,70,Color.green));
+                birds.add(new Birds(150,10,90,70,Color.yellow));
+            }
+            else if (Scores >= 175) {
 
-        }
+            }
+
+        }while (Scores == 175);
+
+
 
 
 
