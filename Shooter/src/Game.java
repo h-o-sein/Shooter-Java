@@ -45,7 +45,9 @@ public class Game extends JPanel implements ActionListener, KeyListener {
 
     }
 
-
+    public int getScores() {
+        return Scores;
+    }
 
 
     @Override
@@ -56,7 +58,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
             bird.draw(g);
             if (bird.getBound().intersects(gun.getBound())){
                 birds.remove(bird);
-                Scores = Scores + 25;
+                //Scores = Scores + 25;
             }
         }
 
