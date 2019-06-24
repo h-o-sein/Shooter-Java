@@ -30,12 +30,16 @@ public class StatusBar {
 
         UIStatusBar.setColor(Color.darkGray);
         UIStatusBar.fillRect(0, game.HEIGHT, 450 , status_height - game.HEIGHT  );
+
+        UIStatusBar.setColor(Color.WHITE);
+        UIStatusBar.drawRect(10, game.HEIGHT + 10, width - 20, status_height - game.HEIGHT - 20);
+
         int Fire = 10 - FireCount;
         UIStatusBar.setColor(Color.yellow);
         UIStatusBar.setFont(new Font (Font.SANS_SERIF , Font.BOLD , 20));
-        UIStatusBar.drawString("Shots: " + String.valueOf(Fire), width/12 , game.HEIGHT + 20 ) ;
+        UIStatusBar.drawString("Shots: " + String.valueOf(Fire), 20 , game.HEIGHT + 40 ) ;
 
-       UIStatusBar.drawString("Scores: " + String.valueOf(0s), width/2, game.HEIGHT + 50 ) ;
+       UIStatusBar.drawString("Scores: " + String.valueOf(0), 20 , game.HEIGHT + 90 ) ;
 
     }
 
