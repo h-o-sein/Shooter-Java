@@ -19,6 +19,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
     private StatusBar statusBar;
     private int GunHeight = 100;
     private int ShotCounter = 0;
+    private int Scores = 0;
 
     public Game() {
         timer = new Timer(20,this);
@@ -39,6 +40,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         birds.add(new Birds(260,85,90,70,Color.orange));
         birds.add(new Birds(100,50,90,70,Color.green));
         birds.add(new Birds(50,200,90,70,Color.yellow));
+        birds.add(new Birds(260,300,90,70,Color.BLUE));
 
     }
 
@@ -50,6 +52,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
             bird.draw(g);
             if (bird.getBound().intersects(gun.getBound())){
                 birds.remove(bird);
+                Scores = Scores + 25;
             }
         }
 
