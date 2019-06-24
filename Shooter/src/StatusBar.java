@@ -40,27 +40,13 @@ public class StatusBar {
         int Fire = 10 - FireCount;
         UIStatusBar.setColor(Color.yellow);
         UIStatusBar.setFont(new Font (Font.SANS_SERIF , Font.BOLD , 20));
-        UIStatusBar.drawString("Shots: " + String.valueOf(Fire), 20 , game.HEIGHT + 40 ) ;
+        UIStatusBar.drawString("Shots: " + String.valueOf(Fire), 20 , game.HEIGHT + 30 ) ;
+        UIStatusBar.drawString("Level: " , 220 , game.HEIGHT + 30 ) ;
+       UIStatusBar.drawString("Scores: " + String.valueOf(Scores), 20 , game.HEIGHT + 80 ) ;
 
-       UIStatusBar.drawString("Scores: " + String.valueOf(Scores), 20 , game.HEIGHT + 90 ) ;
-
-       UIStatusBar.drawString("Name: " + Name, 20 , game.HEIGHT + 90 ) ;
+       UIStatusBar.drawString("Name: " + Name, 20 , game.HEIGHT + 130 ) ;
     }
 
-    // Score Panel
-		/*g.setColor(Color.DARK_GRAY);
-		g.fillRect(0, HEIGHT, WIDTH, PANEL_HEIGHT - HEIGHT);
-
-		g.setColor(Color.WHITE);
-		g.drawRect(10, HEIGHT + 10, WIDTH - 20, PANEL_HEIGHT - HEIGHT - 20);
-
-		g.setColor(Color.YELLOW);
-		g.setFont(new Font(Font.SANS_SERIF, Font.BOLD + Font.ITALIC, 16));
-		g.drawString("Bouncing Ball", 20, HEIGHT + 40);
-
-		g.setFont(new Font(Font.SANS_SERIF, Font.ITALIC, 12));
-		g.drawString("Your Name is: " + name, 20, HEIGHT + 70);
-		g.drawString("Your Score is: " + score, 20, HEIGHT + 100); */
 
     public void StatusFire() {
         FireCount++;
