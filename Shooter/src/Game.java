@@ -48,6 +48,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         birds.add(new Birds(100,50,90,70,Color.green));
         birds.add(new Birds(50,200,90,70,Color.yellow));
         birds.add(new Birds(260,300,90,70,Color.BLUE));*/
+        //ok
 
         if (Scores >= 0) {
             birds.add(new Birds(260,85,90,70,Color.orange));
