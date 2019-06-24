@@ -42,6 +42,7 @@ public class StatusBar {
 
        UIStatusBar.drawString("Scores: " + String.valueOf(Scores), 20 , game.HEIGHT + 90 ) ;
 
+       UIStatusBar.drawString("Name: " + profileGamer.getName(), 20 , game.HEIGHT + 90 ) ;
     }
 
     // Score Panel
