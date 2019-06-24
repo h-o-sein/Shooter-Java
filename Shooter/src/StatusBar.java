@@ -38,11 +38,11 @@ public class StatusBar {
         int Fire = 10 - FireCount;
         UIStatusBar.setColor(Color.yellow);
         UIStatusBar.setFont(new Font (Font.SANS_SERIF , Font.BOLD , 20));
-        UIStatusBar.drawString("Shots: " + String.valueOf(Fire), 20 , game.HEIGHT + 40 ) ;
+        UIStatusBar.drawString("Shots: " + String.valueOf(Fire), 20 , game.HEIGHT + 30 ) ;
 
-       UIStatusBar.drawString("Scores: " + String.valueOf(Scores), 20 , game.HEIGHT + 90 ) ;
+       UIStatusBar.drawString("Scores: " + String.valueOf(Scores), 20 , game.HEIGHT + 80 ) ;
 
-       UIStatusBar.drawString("Name: " + profileGamer.getName(), 20 , game.HEIGHT + 90 ) ;
+       UIStatusBar.drawString("Name: " , 20 , game.HEIGHT + 130 ) ;
     }
 
     // Score Panel
