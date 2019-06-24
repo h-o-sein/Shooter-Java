@@ -12,6 +12,7 @@ public class StatusBar {
 
     private int FireCount;
     private int Scores;
+    private String Name;
 
     public StatusBar(int x, int y, int width, int height , int status_height , Color color) {
 
@@ -38,11 +39,11 @@ public class StatusBar {
         int Fire = 10 - FireCount;
         UIStatusBar.setColor(Color.yellow);
         UIStatusBar.setFont(new Font (Font.SANS_SERIF , Font.BOLD , 20));
-        UIStatusBar.drawString("Shots: " + String.valueOf(Fire), 20 , game.HEIGHT + 30 ) ;
+        UIStatusBar.drawString("Shots: " + String.valueOf(Fire), 20 , game.HEIGHT + 40 ) ;
 
-       UIStatusBar.drawString("Scores: " + String.valueOf(Scores), 20 , game.HEIGHT + 80 ) ;
+       UIStatusBar.drawString("Scores: " + String.valueOf(Scores), 20 , game.HEIGHT + 90 ) ;
 
-       UIStatusBar.drawString("Name: " , 20 , game.HEIGHT + 130 ) ;
+       UIStatusBar.drawString("Name: " + Name, 20 , game.HEIGHT + 90 ) ;
     }
 
     // Score Panel
@@ -68,5 +69,8 @@ public class StatusBar {
         Scores = Score;
     }
 
+    public void StatusName(String name) {
+        Name = name;
+    }
 
 }

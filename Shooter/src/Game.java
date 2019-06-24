@@ -29,6 +29,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
 
         profileGamer.DialogName();
 
+
         timer.start();
 
         this.addKeyListener(this);
@@ -36,6 +37,8 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         setFocusTraversalKeysEnabled(true);
 
         statusBar = new StatusBar(0,0, WIDTH, 50, STATUS_HEIGHT, Color.lightGray);
+
+        statusBar.StatusName(profileGamer.getName());
 
         birds = new ArrayList<Birds>();
         birds.add(new Birds(260,85,90,70,Color.orange));
