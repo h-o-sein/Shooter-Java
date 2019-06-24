@@ -11,6 +11,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
 
     public static final int WIDTH = 450;
     public static final int HEIGHT = 650;
+    public static final int STATUS_HEIGHT = 800;
 
     private ArrayList<Birds> birds;
     private Timer timer;
@@ -33,7 +34,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         setFocusable(true);
         setFocusTraversalKeysEnabled(true);
 
-        statusBar = new StatusBar(0,0, WIDTH, 50, Color.lightGray);
+        statusBar = new StatusBar(0,0, WIDTH, 50, STATUS_HEIGHT, Color.lightGray);
 
         birds = new ArrayList<Birds>();
         birds.add(new Birds(260,85,90,70,Color.orange));
@@ -41,6 +42,9 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         birds.add(new Birds(50,200,90,70,Color.yellow));
 
     }
+
+
+
 
     @Override
     public void paintComponent(Graphics g) {

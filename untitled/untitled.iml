@@ -1,0 +1,80 @@
+import java.util.Scanner;
+public class mMain {
+
+	public static void main(String[] args) 
+	{
+		String m,n; 
+		stack s1=new stack(); 
+		char s;
+		Scanner input=new Scanner(System.in);
+		int pos=0;
+		char[] expr=new char[100];
+		System.out.print("Enter the Expretion: ");
+		expr=input.next().toCharArray();
+		s=expr[pos];
+		String result="";
+		while(pos<expr.length)
+		{
+			String a="";
+			if(s>='a' && s<='z')
+			{
+				s1.push(a+s);
+			}
+			else
+			{
+				m=s1.pop();
+				n=s1.pop();
+				a+=s;
+				result+="("+n+a+m+")";
+				s1.push(result);
+			}
+			s=expr[pos++];
+		}
+		System.out.println(s1.StackTop());
+
+	}
+
+}
+
+
+
+
+public class stack 
+{
+	private String[] s=new String[100];
+	private int Top=-1;
+	public boolean empety()
+	{
+		if(Top==-1)
+			return true;
+		else
+			return false;
+	}
+	public void push (String item)
+	{
+		++Top;
+		s[Top]=item;
+	}
+	public String pop()
+	{
+		String temp;
+		if (empety()==false)
+		{
+			temp=s[Top];
+			Top--;
+			return temp;
+		}
+		else
+		{
+			System.out.println("Stack Empety");
+			return null;
+		}
+	}
+	public String StackTop()
+	{
+		if(empety()==false)
+			return s[Top];
+		else
+			return null;
+	}
+}
