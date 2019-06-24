@@ -15,6 +15,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
     private ArrayList<Birds> birds;
     private Timer timer;
     private Gun gun;
+    private ProfileGamer profileGamer;
     private StatusBar statusBar;
     private int GunHeight = 100;
     private int ShotCounter = 0;
@@ -22,6 +23,9 @@ public class Game extends JPanel implements ActionListener, KeyListener {
     public Game() {
         timer = new Timer(20,this);
         gun = new Gun(WIDTH, HEIGHT,25,GunHeight);
+        profileGamer = new ProfileGamer();
+
+        profileGamer.DialogName();
 
         timer.start();
 
