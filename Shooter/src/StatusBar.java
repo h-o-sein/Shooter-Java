@@ -13,6 +13,7 @@ public class StatusBar {
     private int FireCount;
     private int Scores;
     private String Name;
+    private int Level;
 
     public StatusBar(int x, int y, int width, int height , int status_height , Color color) {
 
@@ -71,6 +72,10 @@ public class StatusBar {
 
     public void StatusName(String name) {
         Name = name;
+    }
+
+    public void StatusLevel(int level) {
+        Level = level;
     }
 
 }

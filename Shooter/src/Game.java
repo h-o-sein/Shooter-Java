@@ -21,6 +21,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
     private int GunHeight = 100;
     private int ShotCounter = 0;
     private int Scores = 0;
+    private int Level = 0;
 
     public Game() {
         timer = new Timer(20,this);
@@ -39,6 +40,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         statusBar = new StatusBar(0,0, WIDTH, 50, STATUS_HEIGHT, Color.lightGray);
 
         statusBar.StatusName(profileGamer.getName());
+        statusBar.StatusLevel(Level);
 
         birds = new ArrayList<Birds>();
         birds.add(new Birds(260,85,90,70,Color.orange));
