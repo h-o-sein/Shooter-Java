@@ -8,7 +8,7 @@ public class ProfileGamer {
     public void DialogName() {
 
         Frame = new JFrame();
-        Name = "Ali";//JOptionPane.showInputDialog(Frame,"Enter Your Name :");
+        Name = JOptionPane.showInputDialog(Frame,"Enter Your Name :");
 
     }
 

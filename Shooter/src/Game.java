@@ -4,8 +4,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
-import javax.swing.Timer;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 public class Game extends JPanel implements ActionListener, KeyListener {
 
@@ -19,13 +18,17 @@ public class Game extends JPanel implements ActionListener, KeyListener {
     private Gun gun;
     private ProfileGamer profileGamer;
     private StatusBar statusBar;
+    private Birds sbirds;
     private int GunHeight = 100;
-    private int ShotCounter = 0;
+    private int ShotCounter = 1;
     private int Scores = 0;
     private int Level = 0;
+    private boolean Losser = false;
+    private boolean Restart = false;
+    private int SpeedGame = 20;
 
     public Game() {
-        timer = new Timer(20,this);
+        timer = new Timer(SpeedGame,this);
         gun = new Gun(WIDTH, HEIGHT,25,GunHeight);
         profileGamer = new ProfileGamer();
 
@@ -70,6 +73,41 @@ public class Game extends JPanel implements ActionListener, KeyListener {
                 statusBar.StatusScores(Scores);
                 CreateBirds(Scores);
             }
+            if (Restart == true) {
+                birds.remove(bird);
+            }
+        }
+        Restart = false;
+
+
+
+        if (Losser == true) {
+            ImageIcon LossIcon = new ImageIcon(getClass().getClassLoader().getResource("images/loss.gif"));
+            Image LossImage = LossIcon.getImage();
+            g.drawImage(LossImage,120, HEIGHT/3, 200,100,null);
+
+            ImageIcon LosserIcon = new ImageIcon(getClass().getClassLoader().getResource("images/losser.gif"));
+            Image LosserImage = LosserIcon.getImage();
+            g.drawImage(LosserImage,170, HEIGHT/5, 100,100,null);
+
+            g.drawString("Restart Game Enter 'Z'",155,HEIGHT/2);
+        }
+
+
+        if (Scores >= 400) {
+            ImageIcon WinnerIcon = new ImageIcon(getClass().getClassLoader().getResource("images/winner.gif"));
+            Image WinnerImage = WinnerIcon.getImage();
+            g.drawImage(WinnerImage,120, HEIGHT/3, 200,100,null);
+
+            ImageIcon WinIcon = new ImageIcon(getClass().getClassLoader().getResource("images/win.gif"));
+            Image WinImage = WinIcon.getImage();
+            g.drawImage(WinImage,170, HEIGHT/5, 100,100,null);
+
+            ImageIcon StarIcon = new ImageIcon(getClass().getClassLoader().getResource("images/star.gif"));
+            Image StarImage = StarIcon.getImage();
+            g.drawImage(StarImage,WIDTH/4, HEIGHT/9, 100,100,null);
+
+            g.drawString("Restart Game Enter 'Z'",155,HEIGHT/2);
         }
 
         gun.Drawing(g);
@@ -106,9 +144,26 @@ public class Game extends JPanel implements ActionListener, KeyListener {
 
             if (ShotCounter < 10) {
                 gun.Fire = true;
-                statusBar.StatusFire();
+                statusBar.StatusFire(false,1);
                 ShotCounter++;
             }
+            else {
+                Losser = true;
+                statusBar.StatusFire(true,1);
+
+            }
+        }
+
+        if (e.getKeyCode() == KeyEvent.VK_Z) {
+            Restart = true;
+            Losser = false;
+            ShotCounter = 1;
+            Level = 0;
+            Scores = 0;
+            statusBar.StatusScores(Scores);
+            statusBar.StatusLevel(Level);
+            statusBar.StatusFire(true,ShotCounter);
+            CreateBirds(Scores);
         }
 
 
@@ -132,6 +187,8 @@ public class Game extends JPanel implements ActionListener, KeyListener {
             birds.add(new Birds(100,50,90,70,Color.green));
             birds.add(new Birds(50,200,90,70,Color.yellow));
             birds.add(new Birds(260,300,90,70,Color.BLUE));
+            sbirds.Speed(5,5);
+            SpeedGame = 25;
             statusBar.StatusLevel(Level);
         }
         else if (Scores == 100) {
@@ -141,6 +198,8 @@ public class Game extends JPanel implements ActionListener, KeyListener {
             birds.add(new Birds(50,200,90,70,Color.yellow));
             birds.add(new Birds(260,300,90,70,Color.BLUE));
             birds.add(new Birds(85,260,90,70,Color.BLUE));
+            sbirds.Speed(10,10);
+            SpeedGame = 35;
             statusBar.StatusLevel(Level);
         }
         else if (Scores == 225) {
@@ -152,10 +211,9 @@ public class Game extends JPanel implements ActionListener, KeyListener {
             birds.add(new Birds(85,260,90,70,Color.BLUE));
             birds.add(new Birds(50,100,90,70,Color.green));
             birds.add(new Birds(150,10,90,70,Color.yellow));
+            sbirds.Speed(20,20);
+            SpeedGame = 45;
             statusBar.StatusLevel(Level);
-        }
-        else if (Scores == 400) {
-
         }
     }
 

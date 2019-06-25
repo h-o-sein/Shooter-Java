@@ -24,7 +24,7 @@ public class StatusBar {
         this.color = color;
         this.status_height = status_height ;
 
-        this.FireCount = 0;
+        this.FireCount = 1;
 
     }
 
@@ -48,8 +48,14 @@ public class StatusBar {
     }
 
 
-    public void StatusFire() {
-        FireCount++;
+    public void StatusFire(boolean Input, int fireCount) {
+        if (Input == false) {
+            FireCount++;
+        }
+        else {
+            FireCount = fireCount;
+        }
+
     }
 
     public void StatusScores(int Score) {

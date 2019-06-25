@@ -9,6 +9,8 @@ public class Birds {
     private int xSpeed;
     private int ySpeed;
 
+    private int yT;
+
     private Color color;
     private int width;
     private int height;
@@ -20,6 +22,8 @@ public class Birds {
         this.width = width;
         this.height = height;
         this.color = color;
+
+        //yT = 1;
 
         xSpeed = 2;
         ySpeed = 2;
@@ -36,12 +40,14 @@ public class Birds {
         ImageIcon BirdIcon = new ImageIcon(getClass().getClassLoader().getResource("images/bird.gif"));
         Image BirdImage = BirdIcon.getImage();
         UiBirds.drawImage(BirdImage, x, y, width, height, null);
+
+        //UiBirds.fillOval(x , y-yT , 10 , 10);
     }
 
     public void moveBirds(int gameWidth, int gameHeight, int GunHeight){
         x += xSpeed;
         y += ySpeed;
-
+        //yT = yT + 1;
         if(x + width > gameWidth)
             xSpeed *= -1;
 
@@ -58,6 +64,11 @@ public class Birds {
     public Rectangle getBound() {
         Rectangle BirdRect = new Rectangle(x, y, width, height);
         return BirdRect;
+    }
+
+    public void Speed(int xspeed, int yspeed) {
+        xSpeed = xspeed;
+        ySpeed = yspeed;
     }
 
 }
