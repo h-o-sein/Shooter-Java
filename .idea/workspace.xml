@@ -14,7 +14,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Shooter/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
+            <state relative-caret-position="480">
               <caret line="21" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
@@ -32,7 +32,7 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="170" />
-    <option name="y" value="81" />
+    <option name="y" value="80" />
     <option name="width" value="1280" />
     <option name="height" value="730" />
   </component>
@@ -41,6 +41,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -63,8 +65,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -109,6 +109,7 @@
       <workItem from="1556022628248" duration="234000" />
       <workItem from="1557485846677" duration="188000" />
       <workItem from="1561387222194" duration="5000" />
+      <workItem from="1561391682401" duration="19000" />
     </task>
     <task id="LOCAL-00001" summary="Create Project">
       <created>1556021855813</created>
@@ -128,12 +129,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="751000" />
+    <option name="totallyTimeSpent" value="770000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1280" height="730" extended-state="6" />
+    <frame x="-6" y="-6" width="1549" height="846" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2657512" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2696177" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -175,7 +176,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Shooter/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
+        <state relative-caret-position="480">
           <caret line="21" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>

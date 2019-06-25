@@ -14,6 +14,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
 
     //private ArrayList<Birds> birds;
     private ArrayList<Birds> birds = new ArrayList<Birds>();
+    //private ArrayList<Bombs> bombs = new ArrayList<Bombs>();
     private Timer timer;
     private Gun gun;
     private ProfileGamer profileGamer;
@@ -65,6 +66,14 @@ public class Game extends JPanel implements ActionListener, KeyListener {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
+      /*  for (Bombs bomb:bombs) {
+            bomb.draw(g);
+            if (bomb.getBound().intersects(gun.getBound())){
+                bombs.remove(bomb);
+
+            }
+        }
+        */
         for (Birds bird:birds) {
             bird.draw(g);
             if (bird.getBound().intersects(gun.getBound())){
