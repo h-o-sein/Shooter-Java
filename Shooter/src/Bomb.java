@@ -1,4 +1,4 @@
-/* import javax.swing.*;
+import javax.swing.*;
 import java.awt.*;
 
 public class Bomb {
@@ -20,7 +20,7 @@ public class Bomb {
         this.height = height;
         this.color = color;
 
-        ySpeed = 2;
+        ySpeed = 1;
     }
 
 
@@ -33,7 +33,11 @@ public class Bomb {
     public void moveBomb(int gameWidth, int gameHeight, int GunHeight){
 
         y += ySpeed;
-        ySpeed += 1;
+        ySpeed += 0.1;
+    }
+
+    public int GetYBomb() {
+        return y;
     }
 
     public Rectangle getBound() {
@@ -43,4 +47,3 @@ public class Bomb {
 
 }
 
-*/

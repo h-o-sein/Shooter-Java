@@ -87,4 +87,9 @@ public class Gun {
         return ShotRect;
     }
 
+    public Rectangle getBoundGun() {
+        Rectangle GunRect = new Rectangle((x/2) - (Width/2),y - Height,150, Height);
+        return GunRect;
+    }
+
 }

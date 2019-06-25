@@ -14,7 +14,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
 
     //private ArrayList<Birds> birds;
     private ArrayList<Birds> birds = new ArrayList<Birds>();
-    //private ArrayList<Bombs> bombs = new ArrayList<Bombs>();
+    private ArrayList<Bomb> bombs = new ArrayList<Bomb>();
     private Timer timer;
     private Gun gun;
     private ProfileGamer profileGamer;
@@ -55,7 +55,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         birds.add(new Birds(260,300,90,70,Color.BLUE));*/
         //ok
         CreateBirds(Scores);
-
+        bombs.add(new Bomb(260,0,20,20, Color.orange));
 
 
 
@@ -66,14 +66,6 @@ public class Game extends JPanel implements ActionListener, KeyListener {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-      /*  for (Bombs bomb:bombs) {
-            bomb.draw(g);
-            if (bomb.getBound().intersects(gun.getBound())){
-                bombs.remove(bomb);
-
-            }
-        }
-        */
         for (Birds bird:birds) {
             bird.draw(g);
             if (bird.getBound().intersects(gun.getBound())){
@@ -81,9 +73,21 @@ public class Game extends JPanel implements ActionListener, KeyListener {
                 Scores = Scores + 25;
                 statusBar.StatusScores(Scores);
                 CreateBirds(Scores);
+                //CreateBombs(Scores);
             }
             if (Restart == true) {
                 birds.remove(bird);
+            }
+        }
+        for (Bomb bomb:bombs) {
+            bomb.draw(g);
+            if (bomb.getBound().intersects(gun.getBoundGun())) {
+                bombs.remove(bomb);
+                Scores = Scores - 10;
+                statusBar.StatusScores(Scores);
+            }
+            if (bomb.GetYBomb() > HEIGHT) {
+                bombs.remove(bomb);
             }
         }
         Restart = false;
@@ -128,6 +132,9 @@ public class Game extends JPanel implements ActionListener, KeyListener {
     public void actionPerformed(ActionEvent e) {
         for (Birds bird:birds)
             bird.moveBirds(WIDTH,HEIGHT,GunHeight);
+
+        for (Bomb bomb:bombs)
+            bomb.moveBomb(WIDTH,HEIGHT,GunHeight);
 
         if (gun.Fire == true)
             gun.FireGun(HEIGHT);
@@ -181,6 +188,22 @@ public class Game extends JPanel implements ActionListener, KeyListener {
     @Override
     public void keyReleased(KeyEvent e) {
 
+    }
+
+    public void CreateBombs(int scores) {
+        if (Scores == 25) {
+            bombs.add(new Bomb(260,0,20,20, Color.orange));
+
+        }
+        else if (Scores == 100) {
+            bombs.add(new Bomb(80,0,20,20, Color.orange));
+            bombs.add(new Bomb(200,0,20,20, Color.orange));
+        }
+        else if (Scores == 225) {
+            bombs.add(new Bomb(90,0,20,20, Color.orange));
+            bombs.add(new Bomb(150,0,20,20, Color.orange));
+            bombs.add(new Bomb(300,0,20,20, Color.orange));
+        }
     }
 
     public void CreateBirds(int scores) {
