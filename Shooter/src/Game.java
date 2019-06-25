@@ -19,7 +19,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
     private Gun gun;
     private ProfileGamer profileGamer;
     private StatusBar statusBar;
-    private Birds sbirds;
+    //private Birds sbirds;
     private int GunHeight = 100;
     private int ShotCounter = 1;
     private int Scores = 0;
@@ -187,32 +187,32 @@ public class Game extends JPanel implements ActionListener, KeyListener {
 
 
         if (Scores == 0) {
-            Level++;
+            Level = Level + 1;
             birds.add(new Birds(260,85,90,70,Color.orange));
             statusBar.StatusLevel(Level);
         }
         else if (Scores == 25) {
-            Level++;
+            Level = Level + 1;
             birds.add(new Birds(100,50,90,70,Color.green));
             birds.add(new Birds(50,200,90,70,Color.yellow));
             birds.add(new Birds(260,300,90,70,Color.BLUE));
-            sbirds.Speed(5,5);
+            //sbirds.Speed(5,5);
             SpeedGame = 25;
             statusBar.StatusLevel(Level);
         }
         else if (Scores == 100) {
-            Level++;
+            Level = Level + 1;
             birds.add(new Birds(260,85,90,70,Color.orange));
             birds.add(new Birds(100,50,90,70,Color.green));
             birds.add(new Birds(50,200,90,70,Color.yellow));
             birds.add(new Birds(260,300,90,70,Color.BLUE));
             birds.add(new Birds(85,260,90,70,Color.BLUE));
-            sbirds.Speed(10,10);
+            //sbirds.Speed(10,10);
             SpeedGame = 35;
             statusBar.StatusLevel(Level);
         }
         else if (Scores == 225) {
-            Level++;
+            Level = Level + 1;
             birds.add(new Birds(260,85,90,70,Color.orange));
             birds.add(new Birds(100,50,90,70,Color.green));
             birds.add(new Birds(50,200,90,70,Color.yellow));
@@ -220,7 +220,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
             birds.add(new Birds(85,260,90,70,Color.BLUE));
             birds.add(new Birds(50,100,90,70,Color.green));
             birds.add(new Birds(150,10,90,70,Color.yellow));
-            sbirds.Speed(20,20);
+            //sbirds.Speed(20,20);
             SpeedGame = 45;
             statusBar.StatusLevel(Level);
         }
